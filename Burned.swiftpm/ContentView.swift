@@ -1,13 +1,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var selection: Int?
+    
     var body: some View {
         NavigationView {
             List {
                 
                 Section (header: Text("About this app")) {
-                    NavigationLink () {
-                        ContentView()
+                    NavigationLink (tag: 0, selection: $selection) {
+                        WelcomeView()
                     } label: {
                     Label("Introduction", systemImage: "questionmark.circle")
                 }
@@ -45,11 +48,35 @@ struct ContentView: View {
                     } label: {
                         Label("Environmental monitoring", systemImage: "questionmark.circle")
                     }
-            }
-                Section (header: Text("Tools")) {
-                    
                 }
                 
+                Section (header: Text("Tools")) {
+                    
+                    NavigationLink () {
+                        ContentView()
+                    } label: {
+                        Label("Notify bodies", systemImage: "questionmark.circle")
+                    }
+                    NavigationLink () {
+                        ContentView()
+                    } label: {
+                        Label("first aid checklist", systemImage: "questionmark.circle")
+                    }
+                }
+                
+                Section (header: Text("Extra info")) {
+                    
+                    NavigationLink () {
+                        ContentView()
+                    } label: {
+                        Label("Brazilian fire data", systemImage: "questionmark.circle")
+                    }
+                    NavigationLink () {
+                        ContentView()
+                    } label: {
+                        Label("Fire simulation", systemImage: "questionmark.circle")
+                    }
+                }
             }
         }
     }
