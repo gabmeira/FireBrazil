@@ -19,32 +19,32 @@ struct ContentView: View {
                 Section (header: Text("Importance Guides")) {
                     
                     NavigationLink () {
-                        ContentView()
+//
                     } label: {
                         Label("Environmental Preservation", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        ContentView()
+                        
                     } label: {
                         Label("Prevention of Uncontrolled Fires", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        ContentView()
+                        
                     } label: {
                         Label("Air quality", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        ContentView()
+                        
                     } label: {
                         Label("Emergency Planning and Response", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        ContentView()
+                        
                     } label: {
                         Label("Natural Disaster Control", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        ContentView()
+                        
                     } label: {
                         Label("Environmental monitoring", systemImage: "questionmark.circle")
                     }
@@ -53,12 +53,12 @@ struct ContentView: View {
                 Section (header: Text("Tools")) {
                     
                     NavigationLink () {
-                        ContentView()
+                        
                     } label: {
                         Label("Notify bodies", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        ContentView()
+                        
                     } label: {
                         Label("first aid checklist", systemImage: "questionmark.circle")
                     }
@@ -67,12 +67,12 @@ struct ContentView: View {
                 Section (header: Text("Extra info")) {
                     
                     NavigationLink () {
-                        ContentView()
+                        
                     } label: {
                         Label("Brazilian fire data", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        ContentView()
+                        
                     } label: {
                         Label("Fire simulation", systemImage: "questionmark.circle")
                     }
