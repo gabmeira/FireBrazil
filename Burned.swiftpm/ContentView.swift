@@ -7,43 +7,33 @@ struct ContentView: View {
                 
                 Section (header: Text("About this app")) {
                     NavigationLink () {
-                        ContentView()
+                        WelcomeView()
                     } label: {
-                    Label("Introduction", systemImage: "questionmark.circle")
+                    Label("Introdução", systemImage: "questionmark.circle")
                 }
                 }
                 
-                Section (header: Text("Importance Guides")) {
+                Section (header: Text("Biodiversidade oculta")) {
                     
                     NavigationLink () {
-                        ContentView()
+                        Aquatic()
                     } label: {
-                        Label("Environmental Preservation", systemImage: "questionmark.circle")
+                        Label("Água", systemImage: "questionmark.circle")
+                    }
+                    NavigationLink () {
+                        Air()
+                    } label: {
+                        Label("Ar", systemImage: "questionmark.circle")
+                    }
+                    NavigationLink () {
+                        Earth()
+                    } label: {
+                        Label("Terra", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
                         ContentView()
                     } label: {
-                        Label("Prevention of Uncontrolled Fires", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        ContentView()
-                    } label: {
-                        Label("Air quality", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        ContentView()
-                    } label: {
-                        Label("Emergency Planning and Response", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        ContentView()
-                    } label: {
-                        Label("Natural Disaster Control", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        ContentView()
-                    } label: {
-                        Label("Environmental monitoring", systemImage: "questionmark.circle")
+                        Label("Extra???", systemImage: "questionmark.circle")
                     }
             }
                 Section (header: Text("Tools")) {
