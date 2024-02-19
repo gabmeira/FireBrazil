@@ -1,82 +1,45 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State private var selection: Int?
-    
     var body: some View {
         NavigationView {
             List {
                 
                 Section (header: Text("About this app")) {
-                    NavigationLink (tag: 0, selection: $selection) {
+                    NavigationLink () {
                         WelcomeView()
                     } label: {
-                    Label("Introduction", systemImage: "questionmark.circle")
+                    Label("Introdução", systemImage: "questionmark.circle")
                 }
                 }
                 
-                Section (header: Text("Importance Guides")) {
+                Section (header: Text("Biodiversidade oculta")) {
                     
                     NavigationLink () {
-//
+                        Aquatic()
                     } label: {
-                        Label("Environmental Preservation", systemImage: "questionmark.circle")
+                        Label("Água", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        
+                        Air()
                     } label: {
-                        Label("Prevention of Uncontrolled Fires", systemImage: "questionmark.circle")
+                        Label("Ar", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        
+                        Earth()
                     } label: {
-                        Label("Air quality", systemImage: "questionmark.circle")
+                        Label("Terra", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        
+                        ContentView()
                     } label: {
-                        Label("Emergency Planning and Response", systemImage: "questionmark.circle")
+                        Label("Extra???", systemImage: "questionmark.circle")
                     }
-                    NavigationLink () {
-                        
-                    } label: {
-                        Label("Natural Disaster Control", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        
-                    } label: {
-                        Label("Environmental monitoring", systemImage: "questionmark.circle")
-                    }
-                }
-                
+            }
                 Section (header: Text("Tools")) {
                     
-                    NavigationLink () {
-                        
-                    } label: {
-                        Label("Notify bodies", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        
-                    } label: {
-                        Label("first aid checklist", systemImage: "questionmark.circle")
-                    }
                 }
                 
-                Section (header: Text("Extra info")) {
-                    
-                    NavigationLink () {
-                        
-                    } label: {
-                        Label("Brazilian fire data", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        
-                    } label: {
-                        Label("Fire simulation", systemImage: "questionmark.circle")
-                    }
-                }
             }
         }
     }
