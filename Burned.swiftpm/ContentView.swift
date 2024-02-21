@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var username: String
+    
     var body: some View {
         NavigationView {
+            
             List {
                 
                 Section (header: Text("About this app")) {
@@ -16,7 +19,7 @@ struct ContentView: View {
                 Section (header: Text("Biodiversidade oculta")) {
                     
                     NavigationLink () {
-                        Aquatic()
+                        Aquatic(username: $username)
                     } label: {
                         Label("Água", systemImage: "questionmark.circle")
                     }
@@ -31,7 +34,7 @@ struct ContentView: View {
                         Label("Terra", systemImage: "questionmark.circle")
                     }
                     NavigationLink () {
-                        ContentView()
+                        Earth()
                     } label: {
                         Label("Extra???", systemImage: "questionmark.circle")
                     }
