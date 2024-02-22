@@ -1,49 +1,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Binding var username: String
     
     var body: some View {
         NavigationView {
-            
-            List {
+            VStack {
+                Text("🕵️")
+                    .font(.system(size: 300))
+                Text("""
+Ei, pessoal! O Detetive Micro aqui. Finalmente desvendei os segredos por trás da luminescência das Lulas Bobtail! 🕵️‍♂️💡
+""")
+                .bold()
+                .font(.system(size: 30))
+                .frame(width: 700)
                 
-                Section (header: Text("About this app")) {
-                    NavigationLink () {
-                        WelcomeView()
-                    } label: {
-                    Label("Introdução", systemImage: "questionmark.circle")
-                }
-                }
-                
-                Section (header: Text("Biodiversidade oculta")) {
-                    
-                    NavigationLink () {
-                        Aquatic(username: $username)
-                    } label: {
-                        Label("Água", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        Air()
-                    } label: {
-                        Label("Ar", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        Earth()
-                    } label: {
-                        Label("Terra", systemImage: "questionmark.circle")
-                    }
-                    NavigationLink () {
-                        Earth()
-                    } label: {
-                        Label("Extra???", systemImage: "questionmark.circle")
-                    }
+                NavigationLink("Vamos lá?", destination: Name())
+                .font(.system(size: 30))
+                .bold()
+                .padding(.top, 30)
             }
-                Section (header: Text("Tools")) {
-                    
-                }
-                
-            }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
