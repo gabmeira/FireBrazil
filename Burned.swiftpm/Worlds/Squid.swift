@@ -42,6 +42,11 @@ struct Squid: View {
                 } label: {
                     Text("Como vai aparecer na tela para clicar").multilineTextAlignment(.leading)
                 }
+                
+                Text("""
+
+        Enquanto Detetive Microscópio aprofunda sua investigação, ele desvenda o intrigante mistério das lulas Bobtail, que mantêm uma relação simbiótica única com uma bactéria luminescente. Descobrindo que essa simbiose é a fonte da luminescência cutânea dessas criaturas do oceano, ele percebe o potencial revolucionário dessa descoberta. Ao compreender as complexas interações microbianas, o detetive vislumbra aplicações científicas, desde avanços na bioluminescência artificial até possíveis aplicações médicas. Essa revelação não apenas ilumina os segredos do oceano, mas também abre novas perspectivas para a ciência e a inovação.
+        """)
             }
         }
         .padding()

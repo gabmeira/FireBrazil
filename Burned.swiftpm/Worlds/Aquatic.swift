@@ -15,32 +15,45 @@ struct Aquatic: View {
     @Binding var username: String
     
     var body: some View {
-        VStack {
-            
-            Text("""
-
-    Enquanto Detetive Microscópio aprofunda sua investigação, ele desvenda o intrigante mistério das lulas Bobtail, que mantêm uma relação simbiótica única com uma bactéria luminescente. Descobrindo que essa simbiose é a fonte da luminescência cutânea dessas criaturas do oceano, ele percebe o potencial revolucionário dessa descoberta. Ao compreender as complexas interações microbianas, o detetive vislumbra aplicações científicas, desde avanços na bioluminescência artificial até possíveis aplicações médicas. Essa revelação não apenas ilumina os segredos do oceano, mas também abre novas perspectivas para a ciência e a inovação.
-    """)
-           
             
         ZStack {
         
             Image("OceanoNave")
                 .resizable()
-                .frame(width: 1500, height: 500)
-//                    .frame(width: UIScreen.main.bounds.width / 1, height: UIScreen.main.bounds.height / 1, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                .frame(width: 1500, height: 500)
+                .aspectRatio(contentMode: .fill)
 //
-            Text("🦑")
-                .font(.system(size: UIScreen.main.bounds.height * 0.30))
-                .opacity(1 - opacity)
-//                .offset(x: UIScreen.main.bounds.width / 11, y: UIScreen.main.bounds.height / 15)
+            VStack {
+                Text("🦑")
+                    .font(.system(size: UIScreen.main.bounds.height * 0.30))
+                    .opacity(1 - opacity)
+                //                .offset(x: UIScreen.main.bounds.width / 11, y: UIScreen.main.bounds.height / 15)
+                HStack {
+                    
+                    Text("🦠")
+                        .opacity(0.8)
+                        .padding(.leading, 16)
+                        
+                    Slider(
+                        value: $opacity,
+                        in: 0...1
+                    )
+                    .padding(.horizontal, 30)
+                    
+                    
+                    Text("🦠")
+                        .padding(.trailing, 32)
+                    
+                }.frame(width: UIScreen.main.bounds.width * 0.5, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .background(Color.gray.opacity(0.35))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.purple, lineWidth: 2)
+                    )
+            }
+        }.ignoresSafeArea()
+//            .background(Color.black.opacity(0.5))
             
-            
-            
-        }
-        
-            Slider(value: $opacity, in: 0...1)
-                .padding(100)
             
     //        VStack {
     //            RoundedRectangle(cornerRadius: 20)
@@ -82,7 +95,7 @@ struct Aquatic: View {
     //        Text("\(speed)")
     //            .foregroundColor(isEditing ? .red : .blue)
             
-        }.frame(width: UIScreen.main.bounds.width , height: 0)
+//        }.frame(width: UIScreen.main.bounds.width , height: 0)
 
     }
 }
