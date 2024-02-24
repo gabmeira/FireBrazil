@@ -8,13 +8,13 @@ struct ContentView: View {
                 Text("🕵️")
                     .font(.system(size: 300))
                 Text("""
-Ei, pessoal! O Detetive Micro aqui. Finalmente desvendei os segredos por trás da luminescência das Lulas Bobtail! 🕵️‍♂️💡
+Hey, guys! Detective Micro here. I finally unlocked the secrets behind the luminescence of Bobtail Squids! 🦠💡
 """)
                 .bold()
                 .font(.system(size: 30))
                 .frame(width: 700)
                 
-                NavigationLink("Vamos lá?", destination: Name())
+                NavigationLink("Let's go?", destination: Name())
                 .font(.system(size: 30))
                 .bold()
                 .padding(.top, 30)

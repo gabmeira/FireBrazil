@@ -10,51 +10,63 @@ import SwiftUI
 struct Squid: View {
     
     @Binding var username: String
+    var nameScientificSquid = Text("Euprymna scolopes").italic()
+    var nameScientificBac = Text("Aliivibrio fischeri").italic()
     
     var body: some View {
         ScrollView {
             VStack (alignment: .center) {
-                Text("Tudo que descobri").font(.largeTitle)
-                Text("\(username) Aqui é onde eu colocaria minhas informações de um longo tempo de pesquisa e dedução ciêntifica, para você se envolver com a Lula Bobtail ")
+                Text("A hidden world")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.bottom, 5)
+                Text("\(Text(username).bold()), Intriguing clues are everywhere, just waiting to be discovered. Get ready to follow the tentacles of hidden biodiversity clues, where scientific fun intertwines with the mysterious world of biology or rather microbiology!").frame(maxWidth: .infinity, alignment: .leading)
             }
             
             VStack (alignment: .leading) {
                 DisclosureGroup {
-                    Text("A Lula Bobtail, também conhecida como Lula Bobtail Havaiana, é uma pequena espécie de cefalópode que pertence à família Sepiolidae. \nÉ encontrada nas águas costeiras das ilhas havaianas e é conhecida por sua relação simbiótica única com bactérias bioluminescentes.").frame(maxWidth: .infinity, alignment: .leading)
+                    Text("The Bobtail Squid, also known as the Hawaiian Bobtail Squid, is a small species of cephalopod that belongs to the Sepiolidae family. Its scientific name is \(nameScientificSquid), it is normally found in the coastal waters of the Hawaiian Islands and is known for its unique symbiotic relationship with bioluminescent bacteria.").frame(maxWidth: .infinity, alignment: .leading)
                 } label: {
-                    Text("Visã Geral").multilineTextAlignment(.leading)
+                    Text("Overview").multilineTextAlignment(.leading)
                 }
                 
                 DisclosureGroup {
-                    Text("texto de descobertas tarará tarará").frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Bobtail squid are small cephalopods measuring approximately 2.5 cm to 4.5 cm. They have a round body with a flat mantle, two large eyes and eight arms with two tentacles.").frame(maxWidth: .infinity, alignment: .leading)
                 } label: {
-                    Text("Como vai aparecer na tela para clicar").multilineTextAlignment(.leading)
+                    Text("Physical characteristics").multilineTextAlignment(.leading)
                 }
                 
                 DisclosureGroup {
-                    Text("texto de descobertas tarará tarará").frame(maxWidth: .infinity, alignment: .leading)
+                    Text("The bobtail squid is a small cephalopod that inhabits shallow and deep ocean regions throughout the world. They are commonly found in the Pacific Ocean, Indian Ocean and Atlantic Ocean.").frame(maxWidth: .infinity, alignment: .leading)
                 } label: {
-                    Text("Como vai aparecer na tela para clicar").multilineTextAlignment(.leading)
+                    Text("Where they live").multilineTextAlignment(.leading)
                 }
                 
                 DisclosureGroup {
-                    Text("texto de descobertas tarará tarará").frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Bioluminescence is the production of light by living organisms. In the case of our little squid, she won hearts thanks to her symbiotic relationship with the bacteria \(nameScientificBac). The squid has a special light organ that houses bacteria, which produce light through a chemical reaction.").frame(maxWidth: .infinity, alignment: .leading)
                 } label: {
-                    Text("Como vai aparecer na tela para clicar").multilineTextAlignment(.leading)
+                    Text("Bioluminescence").multilineTextAlignment(.leading)
                 }
                 
-                Text("""
-
-        Enquanto Detetive Microscópio aprofunda sua investigação, ele desvenda o intrigante mistério das lulas Bobtail, que mantêm uma relação simbiótica única com uma bactéria luminescente. Descobrindo que essa simbiose é a fonte da luminescência cutânea dessas criaturas do oceano, ele percebe o potencial revolucionário dessa descoberta. Ao compreender as complexas interações microbianas, o detetive vislumbra aplicações científicas, desde avanços na bioluminescência artificial até possíveis aplicações médicas. Essa revelação não apenas ilumina os segredos do oceano, mas também abre novas perspectivas para a ciência e a inovação.
-        """)
+                DisclosureGroup {
+                    Text("In June 2021, 128 baby bobtail squids were welcomed to the International Space Center. Squids in space. The most interesting thing is what they want to study, which is the relationship between microbes and the Bobtail Squid to see if space (micro gravity) interferes with the beneficial relationships between microbes and animals!").frame(maxWidth: .infinity, alignment: .leading)
+                } label: {
+                    Text("In the space between stars").multilineTextAlignment(.leading)
+                }
+                
+                DisclosureGroup {
+                    Text("The squid provides a safe, nutrient-rich environment for bacteria to grow and thrive, while the bacteria provide the squid with bioluminescence that helps it escape predators. Bacteria also help squid digest food more efficiently by breaking down complex molecules into simpler ones.").frame(maxWidth: .infinity, alignment: .leading)
+                } label: {
+                    Text("Benefits of Symbiosis").multilineTextAlignment(.leading)
+                }
             }
         }
         .padding()
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
-                    Image(systemName: "washer").accessibility(hidden: true)
-                    Text("").font(.headline)
+                    Image(systemName: "paperclip.circle").accessibility(hidden: true)
+                    Text("Squid").font(.headline)
                 }
             }
         }
@@ -62,5 +74,5 @@ struct Squid: View {
 }
 
 #Preview {
-    Squid(username: .constant("Bobtail"))
+    Squid(username: .constant("Test"))
 }

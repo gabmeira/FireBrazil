@@ -13,12 +13,12 @@ struct Name: View {
     
     var body: some View {
         VStack {
-            Text("Antes de partirmos nessa jornada científica, \npreciso saber como chamar você nessa missão.")
+            Text("Before we set off on this scientific journey, \nI need to know what to call you on this mission.")
                 .multilineTextAlignment(.center)
                 .padding()
                 .font(.system(size: 30))
             
-            TextField("Seu melhor nome de detetive da biodiversidade oculta", text: $username)
+            TextField("Your best hidden biodiversity detective name", text: $username)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.horizontal, 350)
             
@@ -28,7 +28,7 @@ struct Name: View {
                 destination: Start(username: $username),
                 isActive: $navigationEnabled,
                 label: {
-                Text("Pronto para começar?")
+                Text("Ready to get started?")
                         .font(.system(size: 20))
                         .bold()
             })
