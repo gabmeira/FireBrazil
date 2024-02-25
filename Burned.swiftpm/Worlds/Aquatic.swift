@@ -44,7 +44,7 @@ struct Aquatic: View {
                     Slider(value: $opacity, in: 0...1)
                         .onChange(of: opacity) { newValue in
                             if newValue == 1 {
-                                message = "Congratulations \(username), you put the clues together correctly. Squid \(Text("Euprymna scolopes").italic()) do not have natural bioluminescence, they need the bioluminescence of bacteria \(Text("Aliivibrio fischeri").italic()). Comunication occurs via Quorum sensing."
+                                message = "Congratulations \(username), you put the clues together correctly. Squid Euprymna scolopes do not have natural bioluminescence, they need the bioluminescence of bacteria Aliivibrio fischeri. Comunication occurs via Quorum sensing."
                                 
                                 alertEnd = true
                                 soundManager.stop(sound: .SeaFuryMonster)
@@ -75,11 +75,16 @@ struct Aquatic: View {
                 HStack {
                     Rectangle()
                         .foregroundColor(Color.black.opacity(0.5))
-                        .frame(width: UIScreen.main.bounds.width * 0.501, height: 100, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width * 0.501, height: 105, alignment: .center)
                         .overlay(
-                            Text(message)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
+                            ScrollView {
+                                Text(message)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .padding(7)
+                                    .padding(.top, 5)
+                                    .lineLimit(nil)
+                            }
                         )
                     
                         .overlay(
