@@ -34,10 +34,19 @@ let package = Package(
             ]
         )
     ],
+    dependencies: [
+        .package(url: "https://github.com/simibac/ConfettiSwiftUI.git", "1.1.0"..<"2.0.0")
+    ],
     targets: [
         .executableTarget(
             name: "AppModule",
-            path: "."
+            dependencies: [
+                .product(name: "ConfettiSwiftUI", package: "confettiswiftui")
+            ],
+            path: ".",
+            resources: [
+                .process("Resources")
+            ]
         )
     ]
 )

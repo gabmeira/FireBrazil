@@ -11,8 +11,13 @@ struct Name: View {
     @State private var username: String = ""
     @State private var navigationEnabled = false
     
+    let soundManager = SoundManager.shared
+    
     var body: some View {
         VStack {
+            Text("🔍")
+                .font(.system(size: 200))
+            
             Text("Before we set off on this scientific journey, \nI need to know what to call you on this mission.")
                 .multilineTextAlignment(.center)
                 .padding()
@@ -21,9 +26,10 @@ struct Name: View {
             TextField("Your best hidden biodiversity detective name", text: $username)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.horizontal, 350)
+                .padding(.bottom, 20)
             
             
-            // Mudar para NavigationStack mas manter a obrigatoriedade do preenchimento
+           
             NavigationLink(
                 destination: Start(username: $username),
                 isActive: $navigationEnabled,
@@ -31,8 +37,15 @@ struct Name: View {
                 Text("Ready to get started?")
                         .font(.system(size: 20))
                         .bold()
+                        .padding()
+                        .background(username.isEmpty ? Color.gray : Color.purple)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
             })
             .disabled(username.isEmpty)
+        }
+        .onAppear {
+                soundManager.playLoop(sound: .PrivateEye)
         }
     }
 }

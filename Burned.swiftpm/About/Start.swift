@@ -42,7 +42,7 @@ struct Start: View {
                     }
                 
                 Section (header: Text("End of the beginning")) {
-                    
+                
                         NavigationLink () {
                             Journey(username: $username)
                             

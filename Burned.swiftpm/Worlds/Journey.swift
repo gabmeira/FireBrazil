@@ -10,6 +10,8 @@ import SwiftUI
 struct Journey: View {
     @Binding var username: String
     
+    let soundManager = SoundManager.shared
+    
     var body: some View {
         ScrollView {
             VStack (alignment: .center) {
@@ -18,6 +20,9 @@ struct Journey: View {
                     .bold()
                     .padding(.bottom, 5)
                 Text("\(Text(username).bold()) my hidden biodiversity detective, I hope you have discovered how unexplored this world still is and how different they are to a life there. As the American poet Walt Whitman wrote in the phrase \"I contain multitudes\" in his poem Song of Myself, from 1855, of course the context was different, but it fits very well for a world where the need to live in harmony with others is of major importance.").frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .onAppear {
+                soundManager.play(sound: .TremoloTwang)
             }
             
             VStack (alignment: .leading) {
@@ -33,11 +38,17 @@ struct Journey: View {
                     Text("This deep-sea mystery is changing our understanding of life | TED").frame(maxWidth: .infinity, alignment: .leading)
                     Text("The mysterious microbes living deep inside the earth - and how they could help humanity | TED").frame(maxWidth: .infinity, alignment: .leading)
                     Text("Disentangling host–microbiota complexity through hologenomics | cientific magazine").frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Quorum sensing in the squid-Vibrio symbiosis | cientific magazine").frame(maxWidth: .infinity, alignment: .leading)
                 } label: {
                     Text("Suggestions for other cases").multilineTextAlignment(.leading)
+                        
                 }
                 
             }
+        }
+        .onAppear {
+            guard !soundManager.isPlaying(sound: .TremoloTwang) else { return }
+            soundManager.playLoop(sound: .TremoloTwang)
         }
         .padding()
             .toolbar {

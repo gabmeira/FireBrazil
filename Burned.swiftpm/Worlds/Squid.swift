@@ -10,8 +10,11 @@ import SwiftUI
 struct Squid: View {
     
     @Binding var username: String
+    
     var nameScientificSquid = Text("Euprymna scolopes").italic()
     var nameScientificBac = Text("Aliivibrio fischeri").italic()
+    
+    let soundManager = SoundManager.shared
     
     var body: some View {
         ScrollView {
@@ -31,7 +34,7 @@ struct Squid: View {
                 }
                 
                 DisclosureGroup {
-                    Text("Bobtail squid are small cephalopods measuring approximately 2.5 cm to 4.5 cm. They have a round body with a flat mantle, two large eyes and eight arms with two tentacles.").frame(maxWidth: .infinity, alignment: .leading)
+                    Text("Bobtail squid are small cephalopods measuring approximately 2.5 cm to 4.5 cm (1 inch to 2 inches). They have a round body with a flat mantle, two large eyes and eight arms with two tentacles.").frame(maxWidth: .infinity, alignment: .leading)
                 } label: {
                     Text("Physical characteristics").multilineTextAlignment(.leading)
                 }
@@ -60,6 +63,10 @@ struct Squid: View {
                     Text("Benefits of Symbiosis").multilineTextAlignment(.leading)
                 }
             }
+        }
+        .onAppear {
+            guard !soundManager.isPlaying(sound: .PrivateEye) else { return }
+            soundManager.play(sound: .PrivateEye)
         }
         .padding()
         .toolbar {

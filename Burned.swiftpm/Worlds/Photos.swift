@@ -10,6 +10,8 @@ import SwiftUI
 struct Photos: View {
     @Binding var username: String
     
+    let soundManager = SoundManager.shared
+    
     var body: some View {
         ScrollView {
             VStack (alignment: .center) {
@@ -38,6 +40,10 @@ struct Photos: View {
                 }
                 
             }
+        }
+        .onAppear {
+            guard !soundManager.isPlaying(sound: .PrivateEye) else { return }
+            soundManager.play(sound: .PrivateEye)
         }
         .padding()
         .toolbar {
