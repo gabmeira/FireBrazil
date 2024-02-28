@@ -1,5 +1,5 @@
 # FireBrazil
- App for Fire Notification
+ App for Fire Notification // No More - Became a Hidden Biodiversity App
 
 * PACKAGE 
 ConfettiSwiftUI: https://github.com/simibac/ConfettiSwiftUI
